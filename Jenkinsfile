@@ -1,6 +1,6 @@
 node {
   stage('Git clone') {
-    git credentialsId: 'github-private-key', url: 'https://github.com/chebihiF/tp5_spring_boot_ws.git'
+    git credentialsId: 'github-private-key', url: 'https://github.com/chebihiF/Spring_boot_app_devops.git'
   }
   stage('Docker build') {
     sh 'docker version'
