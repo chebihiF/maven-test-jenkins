@@ -24,10 +24,10 @@ node {
           remote.password = 'vagrant'
           remote.allowAnyHosts = true
   }
-  stage("deploy with tp5_deployement.yml"){
-    sshPut remote: remote, from: 'tp5_deployement.yml', into: '.'
+  stage("deploy with devops_deployement.yml"){
+    sshPut remote: remote, from: 'devops_deployement.yml', into: '.'
   }
   stage('Deploy spring boot') {
-    sshCommand remote: remote, command: "kubectl apply -f tp5_deployement.yml"
+    sshCommand remote: remote, command: "kubectl apply -f devops_deployement.yml"
   }
 }
