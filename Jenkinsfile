@@ -6,7 +6,7 @@ node {
     sh 'docker version'
     sh 'docker build -t tp5_spring_boot_ws .'
     sh 'docker image list'
-    sh 'docker tag tp5_spring_boot_ws fhcebihi/tp5_spring_boot_ws:1.0'
+    sh 'docker tag tp5_spring_boot_ws fhcebihi/tp5_spring_boot_ws'
   }
   stage('Docker login'){
     withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
