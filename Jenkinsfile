@@ -14,7 +14,7 @@ node {
     }
   }
   stage("Push Image to Docker Hub"){
-    sh 'docker push fhcebihi/tp5_spring_boot_ws:1.0'
+    sh 'docker push fhcebihi/tp5_spring_boot_ws'
   }
   stage("SSH Into k8s Server") {
           def remote = [:]
