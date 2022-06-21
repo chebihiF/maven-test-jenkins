@@ -1,12 +1,13 @@
 pipeline {
   agent none
   environment {
-    REMOTE = [:]
-            remote.name = 'K8S master'
-            remote.host = '100.0.0.2'
-            remote.user = 'vagrant'
-            remote.password = 'vagrant'
+    REMOTE = {
+            remote.name = 'K8S master',
+            remote.host = '100.0.0.2',
+            remote.user = 'vagrant',
+            remote.password = 'vagrant',
             remote.allowAnyHosts = true
+            }
   }
   stages{
     stage('Git clone') {
