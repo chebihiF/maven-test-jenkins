@@ -8,4 +8,12 @@ node {
     sh 'docker image list'
     sh 'docker tag tp5_spring_boot_ws fhcebihi/tp5_spring_boot_ws'
   }
+  stage('Docker login'){
+    withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+        sh 'docker login -u fhcebihi -p $PASSWORD'
+    }
+  }
+  stage("Push Image to Docker Hub"){
+    sh 'docker push fhcebihi/tp5_spring_boot_ws'
+  }
 }
