@@ -16,4 +16,12 @@ node {
   stage("Push Image to Docker Hub"){
     sh 'docker push fhcebihi/tp5_spring_boot_ws'
   }
+  stage("SSH Into k8s Server") {
+          def remote = [:]
+          remote.name = 'K8smaster'
+          remote.host = '100.0.0.2'
+          remote.user = 'vagrant'
+          remote.password = 'vagrant'
+          remote.allowAnyHosts = true
+  }
 }
