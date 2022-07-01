@@ -24,4 +24,7 @@ node {
           remote.password = 'vagrant'
           remote.allowAnyHosts = true
   }
+  stage("deploy with devops_deployement.yml"){
+    sshPut remote: remote, from: 'devops_deployement.yml', into: '.'
+  }
 }
